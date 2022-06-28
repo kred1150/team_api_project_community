@@ -2,7 +2,7 @@
 export default {
   data: function () {
     return {
-      message: "Community Page",
+      message: "Community Page!!!",
     };
   },
   created: function () {},
