@@ -22,8 +22,7 @@ export default {
       {
         first_name: "Adam",
         last_name: "Scott",
-        photo:
-          "https://static.wikia.nocookie.net/sixfeetunder/images/9/91/Adam_Scott.jpeg/revision/latest/top-crop/width/360/height/360?cb=20201007101525",
+        photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT30m9AFELU3oy6YOQyO2GiAnp-5tY7LhOrlA&usqp=CAU",
         short_bio: "I married Leslie Knope",
       },
     ];
@@ -33,12 +32,33 @@ export default {
 </script>
 
 <template>
-  <div class="home">
-    <h1>{{ students }}</h1>
+  <div v-for="student in students" v-bind:key="student.id" class="card mb-3" style="max-width: 540px">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img v-bind:src="student.photo" class="img-fluid rounded-start" alt="" />
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">{{ student.first_name }} {{ student.last_name }}</h5>
+          <p class="card-text">Bio: {{ student.short_bio }}</p>
+          <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+        </div>
+        <button type="button" class="btn btn-primary btn-md">See More Info on {{ student.first_name }}</button>
+      </div>
+    </div>
   </div>
 </template>
 
-<style></style>
+<style>
+.row {
+  align: center;
+  margin-bottom: 3rem;
+  border: red, 3px;
+}
+button {
+  align: right;
+}
+</style>
 
 <!-- 
   Student.create(first_name:"Adam" last_name:"Heckathorn" email:"ajheckathorn01@gmail.com" phone_number:"479-305-9290" short_bio:"text" LinkedIn_URL:"https://www.linkedin.com/in/adam-heckathorn-202072210/" twitter_handle: personal_blog: online_resume_url: github_url: photo:) 
