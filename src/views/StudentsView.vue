@@ -3,23 +3,27 @@ export default {
   data: function () {
     return {
       students: [],
+      current_student: {},
     };
   },
   created: function () {
     this.students = [
       {
+        id: 1,
         first_name: "Adam",
         last_name: "Sandler",
         photo: "https://st.depositphotos.com/1694341/1303/i/950/depositphotos_13037321-stock-photo-adam-sandler.jpg",
         short_bio: "I was in Big Daddy",
       },
       {
+        id: 2,
         first_name: "Adam",
         last_name: "Driver",
         photo: "https://www.pajiba.com/assets_c/2019/12/Adam-Driver-1191616931-thumb-700x466-220140.jpg",
         short_bio: "Im Kylo Ren",
       },
       {
+        id: 3,
         first_name: "Adam",
         last_name: "Scott",
         photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT30m9AFELU3oy6YOQyO2GiAnp-5tY7LhOrlA&usqp=CAU",
@@ -27,7 +31,13 @@ export default {
       },
     ];
   },
-  methods: {},
+  methods: {
+    showMoreInfo: function (student) {
+      this.current_student = student;
+      console.log("http://localhost:8080/students/" + this.current_student["id"]);
+      this.$router.push("/students/" + this.current_student.id);
+    },
+  },
 };
 </script>
 
@@ -43,7 +53,9 @@ export default {
           <p class="card-text">Bio: {{ student.short_bio }}</p>
           <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
         </div>
-        <button type="button" class="btn btn-primary btn-md">See More Info on {{ student.first_name }}</button>
+        <button v-on:click="showMoreInfo(student)" type="button" class="btn btn-primary btn-md">
+          See More Info on {{ student.first_name }}
+        </button>
       </div>
     </div>
   </div>
