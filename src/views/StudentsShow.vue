@@ -25,7 +25,12 @@ export default {
     <div class="card" style="width: 18rem">
       <img v-bind:src="student.photo" class="card-img-top" alt="" />
       <div class="card-body">
-        <p>linkedin and github links will go here</p>
+        <a :href="`${student.LinkedIn_URL}`" class="icon brands fa-linkedin">
+          <span class="label">LinkedIn</span>
+        </a>
+        <a :href="`${student.github_url}`" class="icon brands fa-github">
+          <span class="label">GitHub</span>
+        </a>
       </div>
     </div>
     <p>
