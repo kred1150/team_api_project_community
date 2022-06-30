@@ -1,4 +1,5 @@
 <script>
+import axios from "axios";
 export default {
   data: function () {
     return {
@@ -6,19 +7,10 @@ export default {
     };
   },
   created: function () {
-    this.student = {
-      first_name: "Adam",
-      last_name: "Sandler",
-      email: "adam.sandler@gmail.com",
-      phone_number: "479-305-9290",
-      short_bio: "I was in Big Daddy",
-      LinkedIn_URL: "https://www.linkedin.com/in/adam-heckathorn-202072210/",
-      twitter_handle: "AdamSandler",
-      personal_blog: "",
-      online_resume_url: "",
-      github_url: "",
-      photo: "https://st.depositphotos.com/1694341/1303/i/950/depositphotos_13037321-stock-photo-adam-sandler.jpg",
-    };
+    axios.get("/students/" + this.$route.params.id).then((response) => {
+      console.log("show student", response);
+      this.student = response.data;
+    });
   },
   $nextTick: function () {
     this.twitter_handle.widgets.load();
