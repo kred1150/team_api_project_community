@@ -21,15 +21,6 @@
           <li class="nav-item">
             <a class="nav-link" href="/students">All Students</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/">Create/Edit Profile</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/">Sign Up</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/">Log In</a>
-          </li>
 
           <li class="nav-item dropdown">
             <a
@@ -43,9 +34,18 @@
               Your Profile
             </a>
             <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-              <li><a class="dropdown-item" href="#">Sign Up</a></li>
-              <li><a class="dropdown-item" href="#">Log In</a></li>
-              <li><a class="dropdown-item" href="#">Create/Edit Profile</a></li>
+              <li><a class="dropdown-item" href="https://vocal-kitsune-8ea676.netlify.app/signup">Sign Up</a></li>
+              <li><a class="dropdown-item" href="https://vocal-kitsune-8ea676.netlify.app/login">Log In</a></li>
+              <li>
+                <a class="dropdown-item" href="https://vocal-kitsune-8ea676.netlify.app/resumes/new">
+                  Create a Profile
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="https://vocal-kitsune-8ea676.netlify.app/resumes/:id/edit">
+                  Edit your Profile
+                </a>
+              </li>
             </ul>
           </li>
         </ul>
