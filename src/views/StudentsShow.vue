@@ -57,8 +57,12 @@ export default {
     </div>
     <!-- <a class="twitter-timeline" href="https://twitter.com/AdamSandler?ref_src=twsrc%5Etfw">Tweets by AdamSandler</a> -->
     <div class="card-body">
-      <a data-height="500px" href="https://twitter.com/AdamSandler?ref_src=twsrc%5Etfw" class="twitter-timeline">
-        Adam Sandlers Twitter
+      <a
+        data-height="500px"
+        :href="`https://twitter.com/${student.twitter_handle}?ref_src=twsrc%5Etfw`"
+        class="twitter-timeline"
+      >
+        {{ student.first_name }} {{ student.last_name }} Twitter
       </a>
     </div>
   </div>
