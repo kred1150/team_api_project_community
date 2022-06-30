@@ -6,6 +6,9 @@ import "bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "vue-tweet";
 
-axios.defaults.baseURL = process.env.NODE_ENV === "development" ? "http://localhost:3000" : "/";
+axios.defaults.baseURL =
+  process.env.NODE_ENV === "development"
+    ? "https://tranquil-brook-40225.herokuapp.com"
+    : "https://tranquil-brook-40225.herokuapp.com";
 
 createApp(App).use(router).mount("#app");
